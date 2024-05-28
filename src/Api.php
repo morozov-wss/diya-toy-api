@@ -38,6 +38,7 @@ class Api implements ApiInterface
         $this->client = new Client([
             'base_uri' => $baseApiUri,
             'timeout'  => ($this->waitResponse + 1) * 60,
+            'verify' => false,
         ]);
         $this->token = $this->authenticate($login, $password);
     }
@@ -83,10 +84,10 @@ class Api implements ApiInterface
         try {
             $response = $this->client->get(
                 "branch/sharing/upload/var?WaitResponse={$this->waitResponse}&RequestID={$requestId}", [
-                    'headers' => [
-                        'Authorization' => 'Bearer ' . $this->token,
-                    ],
+                'headers' => [
+                    'Authorization' => 'Bearer ' . $this->token,
                 ],
+            ],
             );
 
             $data = json_decode($response->getBody(), true);

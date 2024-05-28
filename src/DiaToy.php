@@ -45,17 +45,17 @@ class DiaToy
     {
         $response = $this->apiService->getRequestId();
 
-        $qrSrc = $response['deepLink']
+        $qrSrc = $response['deeplink']
             ? (new QRCode(
                 new QROptions([
                     'addQuietzone' => false,
                     'scale' => 10,
                 ])
-            ))->render($response['deepLink'])
+            ))->render($response['deeplink'])
             : null;
 
         return [
-            'message' => !empty($response['requestId']) && $qrSrc ? $this->exceptionMessage : 'success',
+            'message' => !empty($response['requestId']) && !empty($qrSrc) ? 'success' : $this->exceptionMessage,
             'requestId' => $response['requestId'],
             'qrSrc' => $qrSrc,
         ];
