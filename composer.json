@@ -13,7 +13,7 @@
     }
   ],
   "require": {
-    "php": "^7.3",
+    "php": "^6.5",
     "guzzlehttp/guzzle": "*",
     "chillerlan/php-qrcode": "3.4.1",
     "ext-json": "*"
