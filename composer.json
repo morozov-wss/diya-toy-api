@@ -1,0 +1,34 @@
+{
+  "name": "web-systems/dia-toy-api",
+  "description": "integration dia api",
+  "type": "library",
+  "keywords": ["dia", "vin"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jeka Morozov",
+      "email": "morrowthoff@gmail.com",
+      "homepage": "https://web-systems.solutions",
+      "role": "developer"
+    }
+  ],
+  "require": {
+    "php": "^7.3",
+    "guzzlehttp/guzzle": "*",
+    "chillerlan/php-qrcode": "3.4.1",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "WebSystems\\Toyota\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WebSystems\\Toyota\\Tests\\": "tests/"
+    }
+  }
+}
